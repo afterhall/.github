@@ -1,0 +1,57 @@
+name: Bug report
+description: Something does not work as expected
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please do not include real personal data** (messages, names, recordings). Use invented examples.
+        Security problems go to SECURITY.md, not here.
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module
+      options:
+        - Archive core
+        - Importer
+        - Capture (Matrix bot)
+        - Privacy (pseudonymisation)
+        - Sharing / access levels
+        - Memory (index, persona)
+        - Model adapter
+        - Assistant mode
+        - Legacy mode
+        - Dead man's switch / vaults
+        - Family interface
+        - Operations (containers, backup, updates)
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: OS, NAS/server, container runtime, model provider (local or cloud)
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Please check that the logs contain no personal data.
+      render: shell
